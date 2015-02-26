@@ -10,6 +10,8 @@ This project automates the setup of a development environment for working with H
 
 * [Vagrant](http://vagrantup.com)
 
+* [Vagrant Triggers](https://github.com/emyl/vagrant-triggers) Install with: `vagrant plugin install vagrant-triggers`
+
 ## How To Build The Hammer Virtual Machine
 
 Building the virtual machine is this easy:

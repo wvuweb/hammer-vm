@@ -29,7 +29,3 @@ bundle install
 
 # Needed for docs generation.
 update-locale LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 LC_ALL=en_US.UTF-8
-
-echo 'Starting Hammer'
-cd /srv/hammer/hammer/
-ruby hammer_server.rb

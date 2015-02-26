@@ -9,4 +9,9 @@ Vagrant.configure('2') do |config|
   config.vm.synced_folder "../cleanslate_themes", "/srv/cleanslate_themes"
 
   config.vm.provision :shell, path: 'bootstrap.sh', keep_color: true
+
+  config.trigger.after [:up], stdout: true, stderr: true do
+    info "Starting Hammer..."
+    run_remote "cd /srv/hammer/hammer && ruby hammer_server.rb"
+  end
 end
