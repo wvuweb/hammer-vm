@@ -31,3 +31,8 @@ Example:
 ```
 
 When the vagrant process finishes you should be able to access your themes in the browser at [localhost:2000](http://localhost:2000)
+
+
+## Updating hammer
+
+At any time from the `/hammer-vm/` directory run `vagrant hammer-update`
