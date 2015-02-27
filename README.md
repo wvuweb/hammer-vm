@@ -33,6 +33,11 @@ Example:
 When the vagrant process finishes you should be able to access your themes in the browser at [localhost:2000](http://localhost:2000)
 
 
-## Updating hammer
+## Comamnds
 
-At any time from the `/hammer-vm/` directory run `vagrant hammer-update`
+To be ran from the `/hammer-vm/` directory 
+```
+vagrant up              #Start Hammer
+vagrant halt            #Stop Hammer
+vagrant hammer-update   #Update Hammer
+```
