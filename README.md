@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project automates the setup of a development environment for working with Hammer.
+This project automates the setup of a development environment for working with [Hammer](https://github.com/wvuweb/hammer).
 
 ## Installation Requirements
 
