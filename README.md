@@ -15,12 +15,19 @@ This project automates the setup of a development environment for working with H
 ## How To Build The Hammer Virtual Machine
 
 Building the virtual machine is this easy:
+```
+$ git clone https://github.com/wvuweb/hammer-vm.git
+$ cd hammer-vm
+$ vagrant up
+```
 
-    host $ git clone https://github.com/wvuweb/hammer-vm.git
-    host $ cd hammer-vm
-    host $ vagrant up
+The only other requirement is making sure that you clone this VM repo into the same directory level as your `cleanslate_themes` folder
 
+Example:
+```
+/Sites/
+ |_cleanslate_themes
+ |_hammer-vm
+```
 
-The only other requirement is making sure that you clone this VM into the same directory as your  `cleanslate_themes` folder
-
-When the vagrant process finishes you should be able to access your themes at `localhost:2000`
+When the vagrant process finishes you should be able to access your themes in the browser at `localhost:2000`
