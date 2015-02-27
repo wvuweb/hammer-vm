@@ -33,7 +33,7 @@ Example:
 When the vagrant process finishes you should be able to access your themes in the browser at [localhost:2000](http://localhost:2000)
 
 
-## Comamnds
+## Commands
 
 To be ran from the `/hammer-vm/` directory 
 ```
