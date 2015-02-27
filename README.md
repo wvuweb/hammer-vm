@@ -30,4 +30,4 @@ Example:
  |_hammer-vm
 ```
 
-When the vagrant process finishes you should be able to access your themes in the browser at `localhost:2000`
+When the vagrant process finishes you should be able to access your themes in the browser at [localhost:2000](http://localhost:2000)
