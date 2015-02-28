@@ -1,2 +1,3 @@
 .vagrant
 rails
+.DS_Store
