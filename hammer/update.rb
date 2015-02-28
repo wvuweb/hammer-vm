@@ -5,16 +5,6 @@ class Update < Vagrant.plugin(2, :command)
   end
 
   def execute
-    # puts "Updating Hammer..."
-    # puts "Stopping Hammer Processes..."
-    # `vagrant ssh -c "sudo kill -9 $(ps ax | grep '[h]ammer_server.rb' | awk '{print $1}')" default -- -qT`
-    # puts "Pulling latest code from Github..."
-    # `vagrant ssh -c " cd /srv/hammer && sudo git pull" default -- -qT`
-    # puts "Running Bundle install..."
-    # `vagrant ssh -c "sudo bundle install" default -- -qT`
-    # puts "Restarting Hammer..."
-    # `vagrant ssh -c "cd /srv/hammer/hammer && ruby hammer_server.rb --daemon 1" default  -- -qT`
-    # puts "Hammer updated!"
 
     command1 = "sudo kill -9 $(ps ax | grep '[h]ammer_server.rb' | awk '{print $1}')"
     command2 = "cd /srv/hammer && sudo git pull"
@@ -33,8 +23,6 @@ class Update < Vagrant.plugin(2, :command)
       safe_puts("Finished Upgrade!")
       return 0
     end
-
-
 
   end
 end
