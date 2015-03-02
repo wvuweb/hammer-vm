@@ -1,9 +1,11 @@
-class Hammer < Vagrant.plugin("2")
-  name "Hammer"
+module Hammer
+  class Hammer < Vagrant.plugin("2")
+    name "Hammer"
 
-  command "hammer-update" do
-    require_relative "hammer/update"
-    Update
+    command "hammer" do
+      require_relative "hammer/root"
+      Root
+    end
+
   end
-
 end

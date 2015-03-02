@@ -39,5 +39,5 @@ To be ran from the `/hammer-vm/` directory
 ```
 vagrant up              #Start Hammer
 vagrant halt            #Stop Hammer
-vagrant hammer-update   #Update Hammer
+vagrant hammer update   #Update Hammer
 ```
