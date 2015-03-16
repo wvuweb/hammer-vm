@@ -30,8 +30,9 @@ Example:
  |_/hammer-vm/
 ```
 
-When the vagrant process finishes you should be able to access your themes in the browser at [localhost:2000](http://localhost:2000)
+When the vagrant build process finishes you should be able to access your themes in the browser at [localhost:2000](http://localhost:2000)
 
+If the build fails run `vagrant provision` until it completes.  If you have continue to have issues, open an [issue](https://github.com/wvuweb/hammer-vm/issues).
 
 ## Commands
 
@@ -40,4 +41,14 @@ To be ran from the `/hammer-vm/` directory
 vagrant up              #Start Hammer
 vagrant halt            #Stop Hammer
 vagrant hammer update   #Update Hammer
+```
+
+##Mac/Linux Alias
+
+If you would like to have some alias for the above command add the following to your `.bash_profile`, `.bashrc`, or `.profile` in your user root directory.
+
+```
+alias hammer-start="cd ~/Sites/hammer-vm && vagrant up"
+alias hammer-stop="cd ~/Sites/hammer-vm && vagrant halt"
+alias hammer-update="cd ~/Sites/hammer-vm && vagrant hammer update"
 ```
