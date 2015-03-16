@@ -45,7 +45,7 @@ vagrant hammer update   #Update Hammer
 
 ##Mac/Linux Alias
 
-If you would like to have some alias for the above command add the following to your `.bash_profile`, `.bashrc`, or `.profile` in your user root directory.
+If you would like to have aliases for the above command add the following to your `.bash_profile`, `.bashrc`, or `.profile` in your user root directory.
 
 ```
 alias hammer-start="cd ~/Sites/hammer-vm && vagrant up"
