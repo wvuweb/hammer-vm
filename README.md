@@ -17,8 +17,6 @@ This project automates the setup of a development environment for working with [
 Building the virtual machine is this easy:
 ```
 git clone https://github.com/wvuweb/hammer-vm.git
-cd hammer-vm
-vagrant up
 ```
 
 Make sure that you clone this VM repo into the same directory level as your `cleanslate_themes` folder
@@ -28,6 +26,13 @@ Example:
 /Sites/
  |_/cleanslate_themes/
  |_/hammer-vm/
+```
+
+Then change directory into the new `hammer-vm` folder and run `vagrant up`
+
+```
+cd hammer-vm
+vagrant up
 ```
 
 When the vagrant build process finishes you should be able to access your themes in the browser at [localhost:2000](http://localhost:2000)
