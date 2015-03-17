@@ -13,12 +13,12 @@ This project automates the setup of a development environment for working with [
   1. If you haven't made the `Sites` and `cleanslate_themes` folders, run:
     * `cd ~ && mkdir Sites && cd ~/Sites && mkdir cleanslate_themes`
   1. Next, we have to build the Hammer virtual machine. Building the virtual machine is easy:
-```bash
-cd ~/Sites && git clone https://github.com/wvuweb/hammer-vm.git
-cd hammer-vm
-vagrant up
-```
-    
+    ```bash
+    cd ~/Sites && git clone https://github.com/wvuweb/hammer-vm.git
+    cd hammer-vm
+    vagrant up
+    ```
+
     * **NOTE:** The first time you run `vagrant up`, it may take 5-30 minutes to build the virtual machine. On subsequent `vagrant up`'s it will only take a few seconds.
   1. Visit [localhost:2000](http://localhost:2000) in the browser at to access your [CleanSlate](http://cleanslatecms.wvu.edu) themes.
 
