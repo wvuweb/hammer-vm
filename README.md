@@ -13,10 +13,10 @@ This project automates the setup of a development environment for working with [
   1. Install [Vagrant Triggers](https://github.com/emyl/vagrant-triggers) by running:
     * `vagrant plugin install vagrant-triggers`
   1. If you haven't made the `Sites` and `cleanslate_themes` folders, run:
-    * `cd ~ && mkdir Sites && cd ~/Sites && mkdir cleanslate_themes`
+    * `cd ~ && mkdir Sites && cd ~/Sites/ && mkdir cleanslate_themes`
   1. Next, we have to build the Hammer virtual machine. Building the virtual machine is easy:
     ```bash
-    cd ~/Sites && git clone https://github.com/wvuweb/hammer-vm.git
+    cd ~/Sites/ && git clone https://github.com/wvuweb/hammer-vm.git
     cd hammer-vm
     vagrant up
     ```
@@ -28,7 +28,7 @@ If the build fails run `vagrant provision` until it completes.  If you have cont
 
 ## Commands
 
-To be ran from the `/hammer-vm` directory
+To be ran from the `/hammer-vm/` directory
 ```bash
 vagrant up              # Start Hammer
 vagrant halt            # Stop Hammer
@@ -36,11 +36,20 @@ vagrant hammer update   # Update Hammer
 vagrant status          # Is the VM running?
 ```
 
-##Mac/Linux Alias
+## Mac/Linux Alias
 
 If you would like to have aliases for the above command add the following to your `.bash_profile`, `.bashrc`, or `.profile` in your user root directory.
 ```
 alias hammer-start="cd ~/Sites/hammer-vm && vagrant up"
 alias hammer-stop="cd ~/Sites/hammer-vm && vagrant halt"
 alias hammer-update="cd ~/Sites/hammer-vm && vagrant hammer update"
+```
+
+### Other Notes
+
+Truth be told, you don't actually need a `Sites` folder—we simply include it for consistency. To get Hammer working, the `hammer-vm` and `cleanslate_themes` directories must be on the same level, like so:
+```
+/Sites/
+|_/hammer-vm/
+|_/cleanslate_themes/
 ```
