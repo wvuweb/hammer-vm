@@ -18,6 +18,7 @@ cd ~/Sites && git clone https://github.com/wvuweb/hammer-vm.git
 cd hammer-vm
 vagrant up
 ```
+    
     * **NOTE:** The first time you run `vagrant up`, it may take 5-30 minutes to build the virtual machine. On subsequent `vagrant up`'s it will only take a few seconds.
   1. Visit [localhost:2000](http://localhost:2000) in the browser at to access your [CleanSlate](http://cleanslatecms.wvu.edu) themes.
 
