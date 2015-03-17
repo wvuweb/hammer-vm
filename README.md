@@ -4,54 +4,38 @@
 
 This project automates the setup of a development environment for working with [Hammer](https://github.com/wvuweb/hammer).
 
-## Installation Requirements
+## How to install
 
-* [VirtualBox](https://www.virtualbox.org)
-
-* [Vagrant](http://vagrantup.com)
-
-* [Vagrant Triggers](https://github.com/emyl/vagrant-triggers) Install with: `vagrant plugin install vagrant-triggers`
-
-## How To Build The Hammer Virtual Machine
-
-Building the virtual machine is this easy:
-```
-git clone https://github.com/wvuweb/hammer-vm.git
-```
-
-Make sure that you clone this VM repo into the same directory level as your `cleanslate_themes` folder
-
-Example:
-```
-/Sites/
- |_/cleanslate_themes/
- |_/hammer-vm/
-```
-
-Then change directory into the new `hammer-vm` folder and run `vagrant up`
-
-```
+  1. Install [VirtualBox](https://www.virtualbox.org)
+  1. Install [Vagrant](http://vagrantup.com)
+  1. Install [Vagrant Triggers](https://github.com/emyl/vagrant-triggers) by running:
+    * `vagrant plugin install vagrant-triggers`
+  1. If you haven't made the `Sites` and `cleanslate_themes` folders, run:
+    * `cd ~ && mkdir Sites && cd ~/Sites && mkdir cleanslate_themes`
+  1. Next, we have to build the Hammer virtual machine. Building the virtual machine is easy:
+```bash
+cd ~/Sites && git clone https://github.com/wvuweb/hammer-vm.git
 cd hammer-vm
 vagrant up
 ```
-
-When the vagrant build process finishes you should be able to access your themes in the browser at [localhost:2000](http://localhost:2000)
+    * **NOTE:** The first time you run `vagrant up`, it may take 5-30 minutes to build the virtual machine. On subsequent `vagrant up`'s it will only take a few seconds.
+  1. Visit [localhost:2000](http://localhost:2000) in the browser at to access your [CleanSlate](http://cleanslatecms.wvu.edu) themes.
 
 If the build fails run `vagrant provision` until it completes.  If you have continue to have issues, open an [issue](https://github.com/wvuweb/hammer-vm/issues).
 
 ## Commands
 
-To be ran from the `/hammer-vm/` directory
-```
-vagrant up              #Start Hammer
-vagrant halt            #Stop Hammer
-vagrant hammer update   #Update Hammer
+To be ran from the `/hammer-vm` directory
+```bash
+vagrant up              # Start Hammer
+vagrant halt            # Stop Hammer
+vagrant hammer update   # Update Hammer
+vagrant status          # Is the VM running?
 ```
 
 ##Mac/Linux Alias
 
 If you would like to have aliases for the above command add the following to your `.bash_profile`, `.bashrc`, or `.profile` in your user root directory.
-
 ```
 alias hammer-start="cd ~/Sites/hammer-vm && vagrant up"
 alias hammer-stop="cd ~/Sites/hammer-vm && vagrant halt"
