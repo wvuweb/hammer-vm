@@ -21,6 +21,7 @@ Vagrant.configure('2') do |config|
 
   config.trigger.after [:up, :provision], stdout: true, stderr: true do
     info "Starting Hammer..."
+    run_remote "cd /srv/hammer && git config --global http.sslverify false"
     run_remote "cd /srv/hammer/hammer && ruby hammer_server.rb --daemon 1"
   end
 
