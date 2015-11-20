@@ -23,10 +23,13 @@ module Hammer
       command2 = "cd /srv/hammer && sudo git pull"
       command3 = "cd /srv/hammer && sudo bundle install"
       command4 = "cd /srv/hammer/hammer && ruby hammer_server.rb --daemon 1"
+      command5 = "cd /srv/hammer && git config http.sslVerify 'false'"
 
       with_target_vms(nil, :single_target => true) do |vm|
         safe_puts("Stopping Hammer Processes...")
         vm.action(:ssh_run, :ssh_run_command => command1, ssh_opts: {extra_args: ["-qT"]})
+        safe_puts("Skip Verifying SSL")
+        vm.action(:ssh_run, :ssh_run_command => command5, ssh_opts: {extra_args: ["-qT"]})
         safe_puts("Pulling latest code from GitHub...")
         vm.action(:ssh_run, :ssh_run_command => command2, ssh_opts: {extra_args: ["-qT"]})
         safe_puts("Running Bundle Install...")
