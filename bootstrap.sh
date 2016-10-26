@@ -11,7 +11,6 @@ apt-add-repository -y ppa:brightbox/ruby-ng >/dev/null 2>&1
 apt-get -y update >/dev/null 2>&1
 
 install 'development tools' build-essential
-
 install Ruby ruby1.9.3 ruby1.9.1-dev
 
 echo installing Bundler
@@ -19,7 +18,7 @@ gem install bundler
 
 install Git git
 
-install 'Nokogiri dependencies' libxml2 libxml2-dev libxslt1-dev
+install 'Nokogiri dependencies' libxml2 libxml2-dev libxslt1-dev liblzma-dev zlib1g-dev
 install 'ExecJS runtime' nodejs
 
 git clone https://github.com/wvuweb/hammer.git /srv/hammer
