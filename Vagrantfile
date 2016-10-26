@@ -17,7 +17,7 @@ Vagrant.configure('2') do |config|
   config.vm.box      = 'ubuntu/trusty32'
   config.vm.hostname = 'hammer-vm'
 
-  config.vm.network :forwarded_port, guest: 2000, host: 2000
+  config.vm.network :forwarded_port, guest: 2000, host: ENV['HOST_PORT'] || 2000
 
   cleanslate_themes_dir = ENV['CLEANSLATE_THEMES'] || '../cleanslate_themes'
   config.vm.synced_folder cleanslate_themes_dir, "/srv/cleanslate_themes"
