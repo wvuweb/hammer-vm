@@ -10,8 +10,15 @@ This project automates the setup of a development environment for working with [
   1. Install [Vagrant](http://vagrantup.com)
   1. Install [Vagrant Triggers](https://github.com/emyl/vagrant-triggers) by running:
     * `vagrant plugin install vagrant-triggers`
+  1. Install [Vagrant ENV](https://github.com/gosuri/vagrant-env) by running:
+    * `vagrant plugin install vagrant-env`
   1. If you haven't made the `Sites` and `cleanslate_themes` folders, run:
     * `cd ~ && mkdir Sites && cd ~/Sites/ && mkdir cleanslate_themes`
+  1. *Optional Step:* Custom cleanslate_themes directory location:
+    1. Create a file named `.env` in the root directory of your `hammer-vm` install
+    1. Add following line with path to directory:
+      * `export CLEANSLATE_THEMES=/full/path/to/cleanslate_themes`
+      * **Not yet tested on Windows**
   1. Next, we have to build the Hammer virtual machine. Building the virtual machine is easy:
     ```bash
     cd ~/Sites/ && git clone https://github.com/wvuweb/hammer-vm.git
