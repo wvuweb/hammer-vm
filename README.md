@@ -39,6 +39,7 @@ vagrant up              # Start Hammer
 vagrant halt            # Stop Hammer
 vagrant hammer update   # Update Hammer
 vagrant status          # Is the VM running?
+vagrant destroy         # Destroys the VM
 ```
 
 ## Mac/Linux Alias
