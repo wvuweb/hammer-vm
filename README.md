@@ -53,7 +53,7 @@ alias hammer-update="cd ~/Sites/hammer-vm && vagrant hammer update"
 
 ### Other Notes
 
-Truth be told, you don't actually need a `Sites` folder—we simply include it for consistency. To get Hammer working, the `hammer-vm` and `cleanslate_themes` directories must be on the same level, like so:
+Truth be told, you don't actually need a `Sites` folder—we simply suggest it for consistency. To get Hammer working, the `hammer-vm` and `cleanslate_themes` directories must be on the same level, unless you have overridden the `hammer-vm` directory using a `.env` file.
 ```
 /Sites/
 |_/hammer-vm/
