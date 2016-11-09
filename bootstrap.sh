@@ -11,7 +11,7 @@ apt-add-repository -y ppa:brightbox/ruby-ng >/dev/null 2>&1
 apt-get -y update >/dev/null 2>&1
 
 install 'development tools' build-essential
-install Ruby ruby1.9.3 ruby1.9.1-dev
+install Ruby ruby2.3 ruby2.3-dev
 
 echo installing Bundler
 gem install bundler
