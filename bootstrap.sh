@@ -23,7 +23,17 @@ install 'ExecJS runtime' nodejs
 
 git clone https://github.com/wvuweb/hammer.git /srv/hammer
 
+
+# check branch of hammer-vm if in dev switch hammer branch to dev
+cd /vagrant
+branch=$(git symbolic-ref --short HEAD)
 cd /srv/hammer
+if [ "$branch"="dev" ]; then
+  echo "Checking out dev branch of Hammer"
+  git checkout dev
+fi
+
+#install hammer bundle
 bundle install
 
 # Needed for docs generation.
