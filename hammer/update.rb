@@ -21,7 +21,7 @@ module Hammer
 
       command1 = "sudo kill -9 $(ps ax | grep '[h]ammer_server.rb' | awk '{print $1}')"
       command2 = "cd /srv/hammer && sudo git pull"
-      command3 = "cd /srv/hammer && sudo bundle install"
+      command3 = "cd /srv/hammer && bundle install"
       command4 = "cd /srv/hammer/hammer && ruby hammer_server.rb --daemon 1"
 
       with_target_vms(nil, :single_target => true) do |vm|
