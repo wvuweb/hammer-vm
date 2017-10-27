@@ -9,27 +9,23 @@ This project automates the setup of a development environment for working with [
   1. Install [VirtualBox](https://www.virtualbox.org) (Versions above 5.0.x not tested)
   1. Install [Vagrant](http://vagrantup.com) (Versions above 1.8.4 not tested)
   1. Install [Vagrant Triggers](https://github.com/emyl/vagrant-triggers) by running:
-    * `vagrant plugin install vagrant-triggers`
+      * `vagrant plugin install vagrant-triggers`
   1. Install [Vagrant ENV](https://github.com/gosuri/vagrant-env) by running:
-    * `vagrant plugin install vagrant-env`
+      * `vagrant plugin install vagrant-env`
   1. If you haven't made the `Sites` and `cleanslate_themes` folders, run:
-    * `cd ~ && mkdir Sites && cd ~/Sites/ && mkdir cleanslate_themes`
+      * `cd ~ && mkdir Sites && cd ~/Sites/ && mkdir cleanslate_themes`
   1. *Optional Step:* Custom cleanslate_themes directory location:
-    1. Create a file named `.env` in the root directory of your `hammer-vm` install
-    1. Add following line with path to directory:
+      1. Create a file named `.env` in the root directory of your `hammer-vm` install
+      1. Add following line with path to directory:
       * `export CLEANSLATE_THEMES=/full/path/to/cleanslate_themes`
       * **Not yet tested on Windows**
-  1. Next, we have to build the Hammer virtual machine. Building the virtual machine is easy:
-    ```bash
-    cd ~/Sites/ && git clone https://github.com/wvuweb/hammer-vm.git
-    cd hammer-vm
-    vagrant up
-    ```
+  1. Next, we have to build the Hammer virtual machine.
+      ```cd ~/Sites/ && git clone https://github.com/wvuweb/hammer-vm.git && cd hammer-vm && vagrant up```
+      * **NOTE:** The first time you run `vagrant up`, it may take 5-30 minutes to build the virtual machine. On subsequent `vagrant up`'s it will only take a few seconds.
 
-    * **NOTE:** The first time you run `vagrant up`, it may take 5-30 minutes to build the virtual machine. On subsequent `vagrant up`'s it will only take a few seconds.
   1. Visit [localhost:2000](http://localhost:2000) in the browser at to access your [CleanSlate](http://cleanslatecms.wvu.edu) themes.
 
-If the build fails run `vagrant provision` until it completes.  If you have continue to have issues, open an [issue](https://github.com/wvuweb/hammer-vm/issues).
+If the build fails run `vagrant provision` until it completes.  If you have continue to have issues, [open an issue](https://github.com/wvuweb/hammer-vm/issues).
 
 ## Commands
 
