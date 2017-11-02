@@ -85,6 +85,7 @@ cd /srv/hammer
 bundle install
 
 chmod 600 /srv/hammer/hammer/config/hammer
+ssh-keyscan bitbucket.org >> ~/.ssh/known_hosts
 
 # Needed for docs generation.
 update-locale LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 LC_ALL=en_US.UTF-8
