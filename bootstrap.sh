@@ -84,5 +84,7 @@ cd /srv/hammer
 #install hammer bundle
 bundle install
 
+chmod 600 /srv/hammer/hammer/config/hammer
+
 # Needed for docs generation.
 update-locale LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 LC_ALL=en_US.UTF-8
