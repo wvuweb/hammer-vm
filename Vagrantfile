@@ -1,12 +1,15 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-Vagrant.require_version ">= 1.7.2"
+Vagrant.require_version ">= 2.1.0"
 
 # Check for plugins
-unless Vagrant.has_plugin?("vagrant-triggers")
-  raise 'vagrant-triggers is not installed!'
-end
+
+# Vagrant trigger plugin is no longer needed as of vagrant 2.1.0
+# https://www.vagrantup.com/docs/triggers/
+# unless Vagrant.has_plugin?("vagrant-triggers")
+#   raise 'vagrant-triggers is not installed!'
+# end
 
 unless Vagrant.has_plugin?("vagrant-env")
   raise 'vagrant-env is not installed!'
@@ -24,14 +27,13 @@ Vagrant.configure('2') do |config|
 
   config.vm.provision :shell, path: 'bootstrap.sh', keep_color: true
 
-  config.trigger.after [:up, :provision], stdout: true, stderr: true do
-    info "Starting Hammer..."
-    # run_remote "cd /srv/hammer && git config --global http.sslverify false"
-    run_remote "cd /srv/hammer/hammer && ruby hammer_server.rb --daemon 1"
+  config.trigger.after [:up, :provision], stdout: true, stderr: true do |trigger|
+    trigger.info = "Starting Hammer..."
+    trigger.run_remote = { inline: "cd /srv/hammer/hammer && ruby hammer_server.rb --daemon 1" }
   end
 
-  config.trigger.before [:halt], stdout: true, stderr: true do
-    info "Stopping Hammer..."
-    run_remote "sudo kill -9 $(ps ax | grep '[h]ammer_server.rb' | awk '{print $1}')"
+  config.trigger.before [:halt], stdout: true, stderr: true do |trigger|
+    trigger.info = "Stopping Hammer..."
+    trigger.run_remote  = { inline: "sudo kill -9 $(ps ax | grep '[h]ammer_server.rb' | awk '{print $1}')" }
   end
 end
