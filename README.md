@@ -6,13 +6,8 @@ This project automates the setup of a development environment for working with [
 
 ## How to install
 
-<<<<<<< HEAD
   1. Install [VirtualBox](https://www.virtualbox.org)
   1. Install [Vagrant](http://vagrantup.com)
-=======
-  1. Install [VirtualBox](https://www.virtualbox.org) (Versions above 5.2.x not tested)
-  1. Install [Vagrant](http://vagrantup.com) (Versions above 2.1.5 not tested)
->>>>>>> e8865cf70fc5d3855a314b7b13dd182653002617
   1. Install [Vagrant Triggers](https://github.com/emyl/vagrant-triggers) by running:
       * `vagrant plugin install vagrant-triggers`
   1. Install [Vagrant ENV](https://github.com/gosuri/vagrant-env) by running:
