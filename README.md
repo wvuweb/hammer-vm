@@ -9,11 +9,11 @@ This project automates the setup of a development environment for working with [
   1. Install [VirtualBox](https://www.virtualbox.org)
   1. Install [Vagrant](http://vagrantup.com)
   1. **STEP REMOVED** ~~Install [Vagrant Triggers](https://github.com/emyl/vagrant-triggers) by running:~~
-    ~~* `vagrant plugin install vagrant-triggers`~~
-    this plugin is no longer needed, if previously installed you will get a warning to remove it.
-    `vagrant plugin uninstall vagrant-triggers`
-    then you may have to run a plugin repair
-    `vagrant plugin repair`
+    * ~~`vagrant plugin install vagrant-triggers`~~
+    * this plugin is no longer needed, if previously installed you will get a warning to remove it.
+    * `vagrant plugin uninstall vagrant-triggers`
+    * then you may have to run a plugin repair
+    * `vagrant plugin repair`
   1. Install [Vagrant ENV](https://github.com/gosuri/vagrant-env) by running:
     * `vagrant plugin install vagrant-env`
   1. If you haven't made the `Sites` and `cleanslate_themes` folders, run:
