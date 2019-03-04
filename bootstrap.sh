@@ -8,10 +8,17 @@ function install {
     sudo apt-get -y install "$@" >/dev/null 2>&1
 }
 
+
 sudo apt-get update
 install "Ruby 2.3" ruby2.3
 install 'Nokogiri dependencies' build-essential patch ruby-dev zlib1g-dev liblzma-dev
 install 'Node JS' nodejs
+
+sudo mkdir /var/log/webrick
+sudo touch /var/log/webrick/error.log
+sudo chown vagrant:vagrant /var/log/webrick/error.log
+sudo touch /var/log/webrick/access.log
+sudo chown vagrant:vagrant /var/log/webrick/access.log
 
 sudo chown vagrant:vagrant /srv
 echo "Cloning Hammer"
