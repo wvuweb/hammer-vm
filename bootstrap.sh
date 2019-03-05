@@ -10,7 +10,7 @@ function install {
 
 
 sudo apt-get update
-install "Ruby 2.3" ruby2.3
+install "Ruby 2.4" ruby2.4
 install 'Nokogiri dependencies' build-essential patch ruby-dev zlib1g-dev liblzma-dev
 install 'Node JS' nodejs
 
