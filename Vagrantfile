@@ -37,7 +37,7 @@ Vagrant.configure('2') do |config|
 
   config.trigger.after [:up, :provision] do |trigger|
     trigger.info = "Starting Hammer..."
-    trigger.run_remote = { privileged: false, inline: "cd /srv/hammer/hammer && ruby hammer_server.rb --daemon 1" }
+    trigger.run_remote = { privileged: false, inline: "cd /srv/hammer/hammer && ruby -W0 hammer_server.rb --daemon 1" }
   end
 
 end
