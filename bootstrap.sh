@@ -15,7 +15,7 @@ install 'Nokogiri dependencies' build-essential patch ruby-dev zlib1g-dev liblzm
 install 'Node JS' nodejs
 
 WEB_BRICK_LOG_DIR="/var/log/webrick"
-if [ ! -d $WEB_BRICK_LOG ]; then
+if [ ! -d $WEB_BRICK_LOG_DIR ]; then
   sudo mkdir $WEB_BRICK_LOG_DIR
   sudo touch $WEB_BRICK_LOG_DIR/error.log
   sudo chown vagrant:vagrant $WEB_BRICK_LOG_DIR/error.log
