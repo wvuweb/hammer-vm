@@ -25,15 +25,19 @@ Vagrant.configure('2') do |config|
   cleanslate_themes_dir = ENV['CLEANSLATE_THEMES'] || '../cleanslate_themes'
   config.vm.synced_folder cleanslate_themes_dir, "/srv/cleanslate_themes"
 
-  config.vm.provision :shell, path: 'bootstrap.sh', keep_color: true, privileged: false
+  dev_environment = ENV['DEV_ENVIRONMENT'] || false
+  hammer_version =  ENV['HAMMER_VERSION'] || false
+
+  config.vm.provision :shell, path: 'bootstrap.sh', keep_color: true, privileged: false, env: {HAMMER_VERSION: hammer_version, DEV_ENVIRONMENT: dev_environment}
+
+  config.trigger.before [:provision, :halt] do |trigger|
+    trigger.info = "Stopping Hammer..."
+    trigger.run_remote  = { inline: "sudo kill -9 $(ps ax | grep '[h]ammer_server.rb' | awk '{print $1}')" }
+  end
 
   config.trigger.after [:up, :provision] do |trigger|
     trigger.info = "Starting Hammer..."
     trigger.run_remote = { privileged: false, inline: "cd /srv/hammer/hammer && ruby hammer_server.rb --daemon 1" }
   end
 
-  config.trigger.before [:halt] do |trigger|
-    trigger.info = "Stopping Hammer..."
-    trigger.run_remote  = { inline: "sudo kill -9 $(ps ax | grep '[h]ammer_server.rb' | awk '{print $1}')" }
-  end
 end
