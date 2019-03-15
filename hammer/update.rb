@@ -18,21 +18,8 @@ module Hammer
         # Print the help for all the sub-commands.
         return help
       end
-
-      command1 = "sudo kill -9 $(ps ax | grep '[h]ammer_server.rb' | awk '{print $1}')"
-      command2 = "cd /srv/hammer && sudo git pull"
-      command3 = "cd /srv/hammer && bundle install"
-      command4 = "cd /srv/hammer/hammer && ruby hammer_server.rb --daemon 1"
-
       with_target_vms(nil, :single_target => true) do |vm|
-        safe_puts("Stopping Hammer Processes...")
-        vm.action(:ssh_run, :ssh_run_command => command1, ssh_opts: {extra_args: ["-qT"]})
-        safe_puts("Pulling latest code from GitHub...")
-        vm.action(:ssh_run, :ssh_run_command => command2, ssh_opts: {extra_args: ["-qT"]})
-        safe_puts("Running Bundle Install...")
-        vm.action(:ssh_run, :ssh_run_command => command3, ssh_opts: {extra_args: ["-qT"]})
-        safe_puts("Restarting Hammer...")
-        vm.action(:ssh_run, :ssh_run_command => command4, ssh_opts: {extra_args: ["-qT"]})
+        vm.action(:provision)
         safe_puts("Finished Upgrade!")
         return 0
       end

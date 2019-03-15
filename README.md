@@ -59,3 +59,11 @@ Truth be told, you don't actually need a `Sites` folder—we simply suggest it f
 |_/hammer-vm/
 |_/cleanslate_themes/
 ```
+
+### ENV Overrides 
+
+You can override the following configurations with a `.env` file in the root of your `hammer-vm` directory
+```
+CLEANSLATE_THEMES=/full/path/to/cleanslate_themes
+HOST_PORT=2000
+```
