@@ -20,7 +20,9 @@ Vagrant.configure('2') do |config|
   config.vm.box      = 'ubuntu/xenial64'
   config.vm.hostname = 'hammer-vm'
 
-  config.vm.network :forwarded_port, guest: 8080, host: ENV['HOST_PORT'] || 2000
+  host_port = ENV['HOST_PORT'] || 2000
+
+  config.vm.network :forwarded_port, guest: 8080, host: host_port
 
   cleanslate_themes_dir = ENV['CLEANSLATE_THEMES'] || '../cleanslate_themes'
   config.vm.synced_folder cleanslate_themes_dir, "/srv/cleanslate_themes"
@@ -37,7 +39,7 @@ Vagrant.configure('2') do |config|
 
   config.trigger.after [:up, :provision] do |trigger|
     trigger.info = "Starting Hammer..."
-    trigger.run_remote = { privileged: false, inline: "cd /srv/hammer/hammer && ruby -W0 hammer_server.rb --daemon 1" }
+    trigger.run_remote = { privileged: false, inline: "cd /srv/hammer/hammer && ruby -W0 hammer_server.rb --daemon 1 --host_port #{host_port}" }
   end
 
 end
