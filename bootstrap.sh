@@ -42,7 +42,7 @@ sudo chmod 600 hammer
 
 
 # If development environment pull from branch checkedout on.
-if [$DEV_ENVIRONMENT == true] ; then
+if [ $DEV_ENVIRONMENT == true ] ; then
   cd /vagrant
   echo "Getting Hammer-VM git branch"
   branch=$(git symbolic-ref --short HEAD)
