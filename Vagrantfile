@@ -32,12 +32,12 @@ Vagrant.configure('2') do |config|
 
   config.vm.provision :shell, path: 'bootstrap.sh', keep_color: true, privileged: false, env: {HAMMER_VERSION: hammer_version, DEV_ENVIRONMENT: dev_environment}
 
-  config.trigger.before [:provision, :halt] do |trigger|
+  config.trigger.before [:provision, :halt, :reload] do |trigger|
     trigger.info = "Stopping Hammer..."
     trigger.run_remote  = { inline: "sudo kill -9 $(ps ax | grep '[h]ammer_server.rb' | awk '{print $1}')" }
   end
 
-  config.trigger.after [:up, :provision] do |trigger|
+  config.trigger.after [:up, :provision, :reload] do |trigger|
     trigger.info = "Starting Hammer..."
     trigger.run_remote = { privileged: false, inline: "cd /srv/hammer/hammer && ruby -W0 hammer_server.rb --daemon 1 --host #{host_port}" }
   end
