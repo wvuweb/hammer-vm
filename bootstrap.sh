@@ -8,8 +8,8 @@ function install {
     sudo apt-get -y install "$@" >/dev/null 2>&1
 }
 
-
-sudo apt-get update
+echo "Updating system packages..."
+sudo apt-get -qq update
 install "Ruby 2.4" ruby2.4
 install 'Nokogiri dependencies' build-essential patch ruby-dev zlib1g-dev liblzma-dev
 install 'Node JS' nodejs
@@ -32,10 +32,9 @@ if [ -d /srv/hammer ]; then
 fi
 
 echo "Cloning Hammer"
-git clone https://github.com/wvuweb/hammer.git /srv/hammer
-
+git clone https://github.com/wvuweb/hammer.git /srv/hammer --quiet
 cd /srv/hammer/hammer/config/
-echo "Giving vagrant ownership of hammer identity file"
+echo "Giving vagrant ownership of Hammer identity file"
 sudo chown vagrant:vagrant hammer
 echo "Setting correct permissions on identity file"
 sudo chmod 600 hammer
