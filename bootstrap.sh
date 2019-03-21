@@ -67,5 +67,15 @@ echo "Installing Bundler and Bundle installing all Gems"
 sudo gem install bundler
 bundle install
 
+touch /home/vagrant/.ssh/config
+chmod 600 /home/vagrant/.ssh/config
+
+cat > /home/vagrant/.ssh/config << EOL
+Host *
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+    LogLevel ERROR
+EOL
+
 echo 'Adding bitbucket as known identity'
 ssh-keyscan bitbucket.org >> ~/.ssh/known_hosts
