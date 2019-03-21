@@ -67,7 +67,7 @@ You can override the following configurations with a `.env` file in the root of 
 CLEANSLATE_THEMES=/full/path/to/cleanslate_themes
 HOST_PORT=2000
 DEV_ENVIRONMENT=true
-HAMMER_VERSION=1.0.12
+HAMMER_VERSION=v1.0.12
 ```
 
 * `CLEANSLATE_THEMES` variable enables setting any path to your cleanslate theme directory
