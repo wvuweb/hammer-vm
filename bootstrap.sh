@@ -43,7 +43,7 @@ sudo chmod 600 hammer
 if [ $HAMMER_VERSION != false ]; then
   cd /srv/hammer
   echo "Checking out version $HAMMER_VERSION of Hammer Server"
-  git checkout $HAMMER_VERSION
+  git checkout $HAMMER_VERSION --quiet
 # If development environment pull from branch checkedout on.
 elif [ $DEV_ENVIRONMENT == true ] ; then
   cd /vagrant
@@ -52,13 +52,13 @@ elif [ $DEV_ENVIRONMENT == true ] ; then
   description=$(git describe)
   cd /srv/hammer
   echo "Checking out $branch at $describe branch of Hammer Server"
-  git checkout $branche
+  git checkout $branch --quiet
 else
   # install the latest tagged release
   cd /srv/hammer
   latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)
   echo "Checking out latest version $latestTag of Hammer Server"
-  git checkout $latestTag
+  git checkout $latestTag --quiet
 fi
 
 
