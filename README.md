@@ -70,7 +70,7 @@ DEV_ENVIRONMENT=true
 HAMMER_VERSION=1.0.12
 ```
 
-`CLEANSLATE_THEMES` variable enables setting any path to your cleanslate theme directory
-`HOST_PORT` variable enables setting any port for the VM to bind Hammer server on
-`DEV_ENVIRONMENT` variable enables latest commit versions of Hammer to be installed
-`HAMMER_VERSION` variable pins installation of a specific released versions of Hammer
+* `CLEANSLATE_THEMES` variable enables setting any path to your cleanslate theme directory
+* `HOST_PORT` variable enables setting any port for the VM to bind Hammer server on
+* `DEV_ENVIRONMENT` variable enables latest commit versions of Hammer to be installed
+* `HAMMER_VERSION` variable pins installation of a specific released versions of Hammer
