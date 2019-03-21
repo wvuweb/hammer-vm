@@ -60,10 +60,17 @@ Truth be told, you don't actually need a `Sites` folder—we simply suggest it f
 |_/cleanslate_themes/
 ```
 
-### ENV Overrides 
+### ENV Overrides
 
 You can override the following configurations with a `.env` file in the root of your `hammer-vm` directory
 ```
 CLEANSLATE_THEMES=/full/path/to/cleanslate_themes
 HOST_PORT=2000
+DEV_ENVIRONMENT=true
+HAMMER_VERSION=1.0.12
 ```
+
+`CLEANSLATE_THEMES` variable enables setting any path to your cleanslate theme directory
+`HOST_PORT` variable enables setting any port for the VM to bind Hammer server on
+`DEV_ENVIRONMENT` variable enables latest commit versions of Hammer to be installed
+`HAMMER_VERSION` variable pins installation of a specific released versions of Hammer
