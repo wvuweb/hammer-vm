@@ -40,21 +40,19 @@ sudo chown vagrant:vagrant hammer
 echo "Setting correct permissions on identity file"
 sudo chmod 600 hammer
 
-
+if [ $HAMMER_VERSION != false ]; then
+  cd /srv/hammer
+  echo "Checking out version $HAMMER_VERSION of Hammer Server"
+  git checkout $HAMMER_VERSION
 # If development environment pull from branch checkedout on.
-if [ $DEV_ENVIRONMENT == true ] ; then
+elif [ $DEV_ENVIRONMENT == true ] ; then
   cd /vagrant
   echo "Getting Hammer-VM git branch"
   branch=$(git symbolic-ref --short HEAD)
   description=$(git describe)
   cd /srv/hammer
   echo "Checking out $branch at $describe branch of Hammer Server"
-  git checkout $branch
-# If Hammer version is set install it
-elif [ $HAMMER_VERSION != false ]; then
-  cd /srv/hammer
-  echo "Checking out version $HAMMER_VERSION of Hammer Server"
-  git checkout $HAMMER_VERSION
+  git checkout $branche
 else
   # install the latest tagged release
   cd /srv/hammer
