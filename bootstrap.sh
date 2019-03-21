@@ -63,9 +63,10 @@ fi
 
 
 cd /srv/hammer
-echo "Installing Bundler and Bundle installing all Gems"
-sudo gem install bundler
-bundle install
+echo "Installing Bundler"
+sudo gem install bundler --quiet
+echo "Installing all gem dependencies... This may take some time, be patient"
+bundle install --quiet
 
 touch /home/vagrant/.ssh/config
 chmod 600 /home/vagrant/.ssh/config
