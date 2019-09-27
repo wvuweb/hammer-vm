@@ -48,7 +48,7 @@ elif [ $DEV_ENVIRONMENT == true ] ; then
   cd /vagrant
   echo "Getting Hammer-VM git branch"
   branch=$(git symbolic-ref --short HEAD)
-  description=$(git describe)
+  description=$(git describe --always)
   cd /srv/hammer
   echo "Checking out $branch at $description branch of Hammer Server"
   git checkout $branch --quiet
