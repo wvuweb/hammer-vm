@@ -50,7 +50,7 @@ elif [ $DEV_ENVIRONMENT == true ] ; then
   branch=$(git symbolic-ref --short HEAD)
   description=$(git describe)
   cd /srv/hammer
-  echo "Checking out $branch at $describe branch of Hammer Server"
+  echo "Checking out $branch at $description branch of Hammer Server"
   git checkout $branch --quiet
 else
   # install the latest tagged release
