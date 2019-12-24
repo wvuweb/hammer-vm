@@ -42,7 +42,7 @@ vagrant destroy         # Destroys the VM
 
 ## Mac/Linux Alias
 
-If you would like to have aliases for the above command add the following to your `.bash_profile`, `.bashrc`, or `.profile` in your user root directory.
+If you would like to have aliases for the above command add the following to your `.zprofile`, `.zshrc`, `.bash_profile`, `.bashrc`, or `.profile` in your user root directory. OSX Catalina (10.15+) and beyond users should use `.zshrc`.
 ```
 alias hammer-start="cd ~/Sites/hammer-vm && vagrant up"
 alias hammer-stop="cd ~/Sites/hammer-vm && vagrant halt"
