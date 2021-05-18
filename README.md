@@ -68,9 +68,11 @@ CLEANSLATE_THEMES=/full/path/to/cleanslate_themes       # default: ~/Sites/clean
 HOST_PORT=2000                                          # default: 2000
 DEV_ENVIRONMENT=true                                    # default: false
 HAMMER_VERSION=v1.0.12                                  # default: false (pulls latest release)
+VERBOSE_INSTALL=true                                    # default: false
 ```
 
 * `CLEANSLATE_THEMES` variable enables setting any path to your cleanslate theme directory
 * `HOST_PORT` variable enables setting any port for the VM to bind Hammer server on
 * `DEV_ENVIRONMENT` variable enables latest commit versions of Hammer to be installed
 * `HAMMER_VERSION` variable pins installation of a specific released versions of Hammer
+* `VERBOSE_INSTALL` variable enables bundle install in `--verbose` mode instead of `--quiet`
