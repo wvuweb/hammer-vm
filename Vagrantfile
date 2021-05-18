@@ -29,8 +29,9 @@ Vagrant.configure('2') do |config|
 
   dev_environment = ENV['DEV_ENVIRONMENT'] || false
   hammer_version =  ENV['HAMMER_VERSION'] || false
+  verbose = ENV['VERBOSE_INSTALL'] || false
 
-  config.vm.provision :shell, path: 'bootstrap.sh', keep_color: true, privileged: false, env: {HAMMER_VERSION: hammer_version, DEV_ENVIRONMENT: dev_environment}
+  config.vm.provision :shell, path: 'bootstrap.sh', keep_color: true, privileged: false, env: {HAMMER_VERSION: hammer_version, DEV_ENVIRONMENT: dev_environment, VERBOSE_INSTALL: verbose}
 
   config.trigger.before [:provision, :halt, :reload] do |trigger|
     trigger.info = "Stopping Hammer..."

@@ -44,7 +44,7 @@ if [ $HAMMER_VERSION != false ]; then
   echo "Checking out version $HAMMER_VERSION of Hammer Server"
   git checkout $HAMMER_VERSION --quiet
 # If development environment pull from branch checkedout on.
-elif [ $DEV_ENVIRONMENT == true ] ; then
+elif [ $DEV_ENVIRONMENT == true ]; then
   cd /vagrant
   echo "Getting Hammer-VM git branch"
   branch=$(git symbolic-ref --short HEAD)
@@ -66,7 +66,15 @@ echo "Installing Bundler"
 sudo gem install bundler --quiet
 echo "Installing all gem dependencies. This may take some time, be patient..."
 # only install needed gems, no development gems like pry
-bundle install --without development --quiet
+
+bundle config set --local without 'development'
+if [ $VERBOSE_INSTALL == true ]; then
+  echo "Bundle installing verbose"
+  bundle install --verbose
+else
+  echo "Bundle installing quiet"
+  bundle install --quiet
+fi
 
 touch /home/vagrant/.ssh/config
 chmod 600 /home/vagrant/.ssh/config
