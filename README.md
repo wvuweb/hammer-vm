@@ -23,6 +23,7 @@ This project automates the setup of a development environment for working with [
       1. Add following line with path to directory:
           * `export CLEANSLATE_THEMES=/full/path/to/cleanslate_themes`
           * **Not yet tested on Windows**
+  1. Disconnect from WVU's VPN if you are currently connected to it.
   1. Next, we have to build the Hammer virtual machine.
       ```cd ~/Sites/ && git clone https://github.com/wvuweb/hammer-vm.git && cd hammer-vm && vagrant up```
       * **NOTE:** The first time you run `vagrant up`, it may take 5-30 minutes to build the virtual machine. On subsequent `vagrant up`'s it will only take a few seconds.
