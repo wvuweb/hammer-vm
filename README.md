@@ -6,24 +6,25 @@ This project automates the setup of a development environment for working with [
 
 ## How to install
 
-  1. Install [VirtualBox](https://www.virtualbox.org)
-  1. Install [Vagrant](http://vagrantup.com)
-  1. **STEP REMOVED** ~~Install [Vagrant Triggers](https://github.com/emyl/vagrant-triggers) by running:~~
+  1. Disconnect from WVU's VPN
+  2. Install [VirtualBox](https://www.virtualbox.org)
+  3. Install [Vagrant](http://vagrantup.com)
+  4. **STEP REMOVED** ~~Install [Vagrant Triggers](https://github.com/emyl/vagrant-triggers) by running:~~
       * ~~`vagrant plugin install vagrant-triggers`~~
       * this plugin is no longer needed, if previously installed you will get a warning to remove it.
       * `vagrant plugin uninstall vagrant-triggers`
       * then you may have to run a plugin repair
       * `vagrant plugin repair`
-  1. Install [Vagrant ENV](https://github.com/gosuri/vagrant-env) by running:
+  5. Install [Vagrant ENV](https://github.com/gosuri/vagrant-env) by running:
       * `vagrant plugin install vagrant-env`
-  1. If you haven't made the `Sites` and `cleanslate_themes` folders, run:
+  6. If you haven't made the `Sites` and `cleanslate_themes` folders, run:
       * `cd ~ && mkdir Sites && cd ~/Sites/ && mkdir cleanslate_themes`
-  1. *Optional Step:* Custom cleanslate_themes directory location:
+  7. *Optional Step:* Custom cleanslate_themes directory location:
       1. Create a file named `.env` in the root directory of your `hammer-vm` install
       1. Add following line with path to directory:
           * `export CLEANSLATE_THEMES=/full/path/to/cleanslate_themes`
           * **Not yet tested on Windows**
-  1. Next, we have to build the Hammer virtual machine.
+  8. Next, we have to build the Hammer virtual machine.
       ```cd ~/Sites/ && git clone https://github.com/wvuweb/hammer-vm.git && cd hammer-vm && vagrant up```
       * **NOTE:** The first time you run `vagrant up`, it may take 5-30 minutes to build the virtual machine. On subsequent `vagrant up`'s it will only take a few seconds.
 
