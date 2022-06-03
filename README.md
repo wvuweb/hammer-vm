@@ -6,6 +6,7 @@ This project automates the setup of a development environment for working with [
 
 ## How to install
 
+  1. Disconnect from WVU's VPN
   1. Install [VirtualBox](https://www.virtualbox.org)
   1. Install [Vagrant](http://vagrantup.com)
   1. If you had a previous version of Hammer installed prior to v1.1.3
